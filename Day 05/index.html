@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lo-Ellen Robotics Team Shirt Order Form</title>
+
+        <style>
+            body {
+                background-color: #000000;
+                color: #ffffff;
+                font-family: Arial, sans-serif;
+                margin: 0;
+            }
+
+            .navbar {
+                align-items: center;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)), url("images/robot-banner.png");
+                background-position: center;
+                background-size: cover;
+                border-bottom: 4px solid #ffd700;
+                border-radius: 0 0 18px 18px;
+                box-sizing: border-box;
+                display: flex;
+                height: 320px;
+                justify-content: center;
+                overflow: hidden;
+                padding: 20px;
+            }
+
+            .logo {
+                filter: drop-shadow(0 5px 10px #000000);
+                max-width: 85%;
+                width: 620px;
+            }
+
+            .form {
+                background-color: #111111;
+                border: 3px solid #ffd700;
+                border-radius: 14px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                padding: 20px;
+                width: 70%;
+            }
+
+            .form h1 {
+                color: #ffd700;
+                text-align: center;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            td {
+                padding: 8px;
+            }
+
+            .question {
+                color: #ffd700;
+                font-weight: bold;
+                padding-top: 20px;
+            }
+
+            input[type="text"],
+            select {
+                border: 2px solid #ffd700;
+                border-radius: 6px;
+                padding: 7px;
+            }
+
+            select {
+                width: 292px;
+            }
+
+            input[type="radio"],
+            input[type="checkbox"] {
+                accent-color: #ffd700;
+            }
+
+            .team-name {
+                color: #ffd700;
+                font-weight: bold;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <img class="logo" src="images/lo-ellen-robotics-logo.png" alt="Lo-Ellen Robotics logo" />
+        </div>
+
+        <div class="form">
+            <h1>Team Shirt Order Form</h1>
+            <p class="team-name">Order your Lo-Ellen Robotics team shirt!</p>
+
+            <form>
+                <table>
+                    <tr>
+                        <td>First Name:</td>
+                        <td>
+                            <input type="text" id="first-name" name="first-name" size="35" placeholder="Enter your first name" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Last Name:</td>
+                        <td>
+                            <input type="text" id="last-name" name="last-name" size="35" placeholder="Enter your last name" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Address:</td>
+                        <td>
+                            <input type="text" id="address" name="address" size="35" placeholder="Enter your address" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>City:</td>
+                        <td>
+                            <input type="text" id="city" name="city" size="35" placeholder="Enter your city" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Province:</td>
+                        <td>
+                            <select id="province" name="province">
+                                <option value="">Choose your province or territory</option>
+                                <option value="Alberta">Alberta</option>
+                                <option value="British Columbia">British Columbia</option>
+                                <option value="Manitoba">Manitoba</option>
+                                <option value="New Brunswick">New Brunswick</option>
+                                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                <option value="Northwest Territories">Northwest Territories</option>
+                                <option value="Nova Scotia">Nova Scotia</option>
+                                <option value="Nunavut">Nunavut</option>
+                                <option value="Ontario">Ontario</option>
+                                <option value="Prince Edward Island">Prince Edward Island</option>
+                                <option value="Quebec">Quebec</option>
+                                <option value="Saskatchewan">Saskatchewan</option>
+                                <option value="Yukon">Yukon</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Postal Code:</td>
+                        <td>
+                            <input type="text" id="postal-code" name="postal-code" size="35" placeholder="Enter your postal code" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="question" colspan="2">What shirt size would you like to order?</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="radio" id="small" name="shirt-size" value="Small" />
+                            <label for="small">Small</label>&nbsp;&nbsp;
+
+                            <input type="radio" id="medium" name="shirt-size" value="Medium" />
+                            <label for="medium">Medium</label>&nbsp;&nbsp;
+
+                            <input type="radio" id="large" name="shirt-size" value="Large" />
+                            <label for="large">Large</label>&nbsp;&nbsp;
+
+                            <input type="radio" id="extra-large" name="shirt-size" value="XL" />
+                            <label for="extra-large">XL</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="question" colspan="2">What options would you like to add?</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" id="name-on-back" name="add-ons" value="Name on back" />
+                            <label for="name-on-back">Name on back</label>&nbsp;&nbsp;
+
+                            <input type="checkbox" id="team-number" name="add-ons" value="Team number" />
+                            <label for="team-number">Team number</label>&nbsp;&nbsp;
+
+                            <input type="checkbox" id="canada-flag" name="add-ons" value="Canada flag" />
+                            <label for="canada-flag">Canada flag</label>&nbsp;&nbsp;
+
+                            <input type="checkbox" id="robot-graphic" name="add-ons" value="Robot graphic" />
+                            <label for="robot-graphic">Robot graphic</label>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

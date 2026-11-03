@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day 11 - Radio Buttons and Checkboxes</title>
+
+        <style>
+            body {
+                background-color: #000000;
+                color: #ffffff;
+                font-family: Arial, sans-serif;
+                margin: 0;
+            }
+
+            .navbar {
+                align-items: center;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)), url("images/robot-banner.png");
+                background-position: center;
+                background-size: cover;
+                border-bottom: 4px solid #ffd700;
+                border-radius: 0 0 18px 18px;
+                display: flex;
+                height: 260px;
+                justify-content: center;
+            }
+
+            .logo {
+                max-width: 80%;
+                width: 550px;
+            }
+
+            .form {
+                background-color: #111111;
+                border: 3px solid #ffd700;
+                border-radius: 14px;
+                margin: 25px auto;
+                padding: 20px;
+                width: 70%;
+            }
+
+            h1,
+            .team-name {
+                color: #ffd700;
+                text-align: center;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            td {
+                padding: 8px;
+            }
+
+            .question {
+                color: #ffd700;
+                font-weight: bold;
+                padding-top: 18px;
+            }
+
+            input[type="text"],
+            select {
+                border: 2px solid #ffd700;
+                border-radius: 6px;
+                padding: 7px;
+                width: 270px;
+            }
+
+            input[type="radio"],
+            input[type="checkbox"] {
+                accent-color: #ffd700;
+            }
+
+            .buttons {
+                padding-top: 20px;
+                text-align: right;
+            }
+
+            button {
+                background-color: #ffd700;
+                border: 2px solid #ffffff;
+                border-radius: 8px;
+                color: #000000;
+                font-weight: bold;
+                margin-left: 8px;
+                padding: 10px 18px;
+            }
+
+            .output {
+                border-top: 2px solid #ffd700;
+                margin-top: 20px;
+                padding: 15px;
+            }
+
+            .output h2 {
+                color: #ffd700;
+            }
+        </style>
+
+        <script>
+            let first = "";
+            let last = "";
+            let address = "";
+            let city = "";
+            let province = "";
+            let postal = "";
+            let shirtSize = "";
+            let nameOption = "";
+            let numberOption = "";
+            let flagOption = "";
+            let robotOption = "";
+
+            function getInfo() {
+                first = document.getElementById("fn").value;
+                last = document.getElementById("ln").value;
+                address = document.getElementById("ad").value;
+                city = document.getElementById("ct").value;
+                postal = document.getElementById("pc").value;
+
+                window.alert("Name: " + first + " " + last + "\nAddress: " + address + "\nCity: " + city + "\nPostal Code: " + postal);
+            }
+
+            function setSmall() {
+                shirtSize = "Small";
+                window.alert("You have chosen a small shirt.");
+            }
+
+            function setMedium() {
+                shirtSize = "Medium";
+                window.alert("You have chosen a medium shirt.");
+            }
+
+            function setLarge() {
+                shirtSize = "Large";
+                window.alert("You have chosen a large shirt.");
+            }
+
+            function setExtraLarge() {
+                shirtSize = "XL";
+                window.alert("You have chosen an XL shirt.");
+            }
+
+            function nameBack() {
+                if (document.getElementById("back").checked == true) {
+                    nameOption = "<br>Name on back";
+                    window.alert("You have chosen to add a name on the back.");
+                } else {
+                    nameOption = "";
+                }
+            }
+
+            function teamNumber() {
+                if (document.getElementById("number").checked == true) {
+                    numberOption = "<br>Team number";
+                    window.alert("You have chosen to add a team number.");
+                } else {
+                    numberOption = "";
+                }
+            }
+
+            function canadaFlag() {
+                if (document.getElementById("flag").checked == true) {
+                    flagOption = "<br>Canada flag";
+                    window.alert("You have chosen to add a Canada flag.");
+                } else {
+                    flagOption = "";
+                }
+            }
+
+            function robotGraphic() {
+                if (document.getElementById("robot").checked == true) {
+                    robotOption = "<br>Robot graphic";
+                    window.alert("You have chosen to add a robot graphic.");
+                } else {
+                    robotOption = "";
+                }
+            }
+
+            function provinceChange() {
+                province = document.getElementById("province").value;
+                window.alert("You have chosen " + province + ".");
+            }
+
+            function showOrder() {
+                getInfo();
+
+                document.getElementById("order-output").innerHTML =
+                    "Name: " + first + " " + last +
+                    "<br>Address: " + address +
+                    "<br>City: " + city +
+                    "<br>Province: " + province +
+                    "<br>Postal Code: " + postal +
+                    "<br>Shirt Size: " + shirtSize +
+                    "<br>Options:" + nameOption + numberOption + flagOption + robotOption;
+            }
+
+            function clearOrder() {
+                document.getElementById("orderForm").reset();
+                document.getElementById("order-output").innerHTML = "";
+                first = "";
+                last = "";
+                address = "";
+                city = "";
+                province = "";
+                postal = "";
+                shirtSize = "";
+                nameOption = "";
+                numberOption = "";
+                flagOption = "";
+                robotOption = "";
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <img class="logo" src="images/lo-ellen-robotics-logo.png" alt="Lo-Ellen Robotics logo" />
+        </div>
+
+        <div class="form">
+            <h1>Team Shirt Order Form</h1>
+            <p class="team-name">Choose your shirt size and team options.</p>
+
+            <form id="orderForm">
+                <table>
+                    <tr>
+                        <td>First Name:</td>
+                        <td><input type="text" id="fn" placeholder="Enter your first name" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Last Name:</td>
+                        <td><input type="text" id="ln" placeholder="Enter your last name" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Address:</td>
+                        <td><input type="text" id="ad" placeholder="Enter your address" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>City:</td>
+                        <td><input type="text" id="ct" placeholder="Enter your city" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Province:</td>
+                        <td>
+                            <select id="province" onchange="provinceChange()">
+                                <option value="">Choose your province or territory</option>
+                                <option>Alberta</option>
+                                <option>British Columbia</option>
+                                <option>Manitoba</option>
+                                <option>New Brunswick</option>
+                                <option>Newfoundland and Labrador</option>
+                                <option>Northwest Territories</option>
+                                <option>Nova Scotia</option>
+                                <option>Nunavut</option>
+                                <option>Ontario</option>
+                                <option>Prince Edward Island</option>
+                                <option>Quebec</option>
+                                <option>Saskatchewan</option>
+                                <option>Yukon</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Postal Code:</td>
+                        <td><input type="text" id="pc" placeholder="Enter your postal code" /></td>
+                    </tr>
+
+                    <tr>
+                        <td class="question" colspan="2">What shirt size would you like?</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="radio" name="size" id="small" value="Small" onchange="setSmall()" /> <label for="small">Small</label>
+                            <input type="radio" name="size" id="medium" value="Medium" onchange="setMedium()" /> <label for="medium">Medium</label>
+                            <input type="radio" name="size" id="large" value="Large" onchange="setLarge()" /> <label for="large">Large</label>
+                            <input type="radio" name="size" id="xl" value="XL" onchange="setExtraLarge()" /> <label for="xl">XL</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="question" colspan="2">What options would you like?</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" id="back" onchange="nameBack()" /> <label for="back">Name on back</label>
+                            <input type="checkbox" id="number" onchange="teamNumber()" /> <label for="number">Team number</label>
+                            <input type="checkbox" id="flag" onchange="canadaFlag()" /> <label for="flag">Canada flag</label>
+                            <input type="checkbox" id="robot" onchange="robotGraphic()" /> <label for="robot">Robot graphic</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="buttons" colspan="2">
+                            <button type="button" onclick="clearOrder()">Clear Order</button>
+                            <button type="button" onclick="getInfo()">Check Information</button>
+                            <button type="button" onclick="showOrder()">Confirm Order</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <div class="output">
+                <h2>Confirmed Order</h2>
+                <div id="order-output"></div>
+            </div>
+        </div>
+    </body>
+</html>

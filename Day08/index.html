@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Amine's JavaScript Calculator</title>
+
+        <style>
+            body {
+                background-color: #000000;
+                color: #ffffff;
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+
+            .calculator {
+                border: 2px solid #ffd700;
+                margin: 40px auto;
+                padding: 20px;
+                width: 500px;
+            }
+
+            h1 {
+                color: #ffd700;
+            }
+
+            table {
+                margin: auto;
+            }
+
+            td {
+                padding: 5px;
+            }
+
+            input[type="text"] {
+                padding: 5px;
+                width: 180px;
+            }
+
+            #result {
+                border: 1px solid #ffffff;
+                color: #ffd700;
+                min-height: 20px;
+                padding: 5px;
+            }
+
+            .buttons {
+                margin-top: 15px;
+            }
+
+            button {
+                margin: 4px;
+            }
+
+            .clear-button {
+                background-color: #ffd700;
+            }
+        </style>
+
+        <script>
+            function addy() {
+                var num1 = document.getElementById("n1").value;
+                var num2 = document.getElementById("n2").value;
+
+                num1 = parseFloat(num1);
+                num2 = parseFloat(num2);
+
+                var output = num1 + num2;
+                document.getElementById("result").innerHTML = num1 + " + " + num2 + " = " + output;
+            }
+
+            function subby() {
+                var num1 = document.getElementById("n1").value;
+                var num2 = document.getElementById("n2").value;
+
+                num1 = parseFloat(num1);
+                num2 = parseFloat(num2);
+
+                var output = num1 - num2;
+                document.getElementById("result").innerHTML = num1 + " - " + num2 + " = " + output;
+            }
+
+            function mutly() {
+                var num1 = document.getElementById("n1").value;
+                var num2 = document.getElementById("n2").value;
+
+                num1 = parseFloat(num1);
+                num2 = parseFloat(num2);
+
+                var output = num1 * num2;
+                document.getElementById("result").innerHTML = num1 + " × " + num2 + " = " + output;
+            }
+
+            function divvy() {
+                var num1 = document.getElementById("n1").value;
+                var num2 = document.getElementById("n2").value;
+
+                num1 = parseFloat(num1);
+                num2 = parseFloat(num2);
+
+                var output = num1 / num2;
+                document.getElementById("result").innerHTML = num1 + " ÷ " + num2 + " = " + output;
+            }
+
+            function powy() {
+                var num1 = document.getElementById("n1").value;
+                var num2 = document.getElementById("n2").value;
+
+                num1 = parseFloat(num1);
+                num2 = parseFloat(num2);
+
+                var output = Math.pow(num1, num2);
+                document.getElementById("result").innerHTML = num1 + " to the power of " + num2 + " = " + output;
+            }
+
+            function pytho() {
+                var num1 = document.getElementById("n1").value;
+                var num2 = document.getElementById("n2").value;
+
+                num1 = parseFloat(num1);
+                num2 = parseFloat(num2);
+
+                var output = Math.sqrt((num1 * num1) + (num2 * num2));
+                document.getElementById("result").innerHTML = "The hypotenuse is " + output;
+            }
+
+            function sine() {
+                var num1 = document.getElementById("n1").value;
+                num1 = parseFloat(num1);
+
+                var radians = num1 * Math.PI / 180;
+                var output = Math.sin(radians);
+                document.getElementById("result").innerHTML = "sin(" + num1 + "°) = " + output;
+            }
+
+            function cosine() {
+                var num1 = document.getElementById("n1").value;
+                num1 = parseFloat(num1);
+
+                var radians = num1 * Math.PI / 180;
+                var output = Math.cos(radians);
+                document.getElementById("result").innerHTML = "cos(" + num1 + "°) = " + output;
+            }
+
+            function tangent() {
+                var num1 = document.getElementById("n1").value;
+                num1 = parseFloat(num1);
+
+                var radians = num1 * Math.PI / 180;
+                var output = Math.tan(radians);
+                document.getElementById("result").innerHTML = "tan(" + num1 + "°) = " + output;
+            }
+
+            function clearCalculator() {
+                document.getElementById("n1").value = "";
+                document.getElementById("n2").value = "";
+                document.getElementById("result").innerHTML = "";
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="calculator">
+            <h1>Amine's Calculator</h1>
+         
+
+            <table>
+                <tr>
+                    <td>First Number:</td>
+                    <td><input type="text" id="n1" /></td>
+                </tr>
+
+                <tr>
+                    <td>Second Number:</td>
+                    <td><input type="text" id="n2" /></td>
+                </tr>
+
+                <tr>
+                    <td>Result:</td>
+                    <td><div id="result"></div></td>
+                </tr>
+            </table>
+
+            <div class="buttons">
+                <button type="button" onclick="addy()">+</button>
+                <button type="button" onclick="subby()">−</button>
+                <button type="button" onclick="mutly()">×</button>
+                <button type="button" onclick="divvy()">÷</button>
+                <button type="button" onclick="powy()">xʸ</button>
+                <button type="button" onclick="pytho()">Pythagorean</button>
+                <button type="button" onclick="sine()">sin</button>
+                <button type="button" onclick="cosine()">cos</button>
+                <button type="button" onclick="tangent()">tan</button>
+                <button class="clear-button" type="button" onclick="clearCalculator()">Clear</button>
+            </div>
+        </div>
+    </body>
+</html>

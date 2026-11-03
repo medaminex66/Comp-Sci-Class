@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day 10 - Page Output Order Form</title>
+
+        <style>
+            body {
+                background-color: #000000;
+                color: #ffffff;
+                font-family: Arial, sans-serif;
+                margin: 0;
+            }
+
+            .navbar {
+                align-items: center;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)), url("images/robot-banner.png");
+                background-position: center;
+                background-size: cover;
+                border-bottom: 4px solid #ffd700;
+                border-radius: 0 0 18px 18px;
+                display: flex;
+                height: 260px;
+                justify-content: center;
+            }
+
+            .logo {
+                max-width: 80%;
+                width: 550px;
+            }
+
+            .links {
+                margin: 20px;
+                text-align: center;
+            }
+
+            .links a {
+                color: #ffd700;
+                margin: 10px;
+            }
+
+            .form {
+                background-color: #111111;
+                border: 3px solid #ffd700;
+                border-radius: 14px;
+                margin: 20px auto;
+                padding: 20px;
+                width: 70%;
+            }
+
+            h1,
+            .team-name {
+                color: #ffd700;
+                text-align: center;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            td {
+                padding: 8px;
+            }
+
+            .question {
+                color: #ffd700;
+                font-weight: bold;
+                padding-top: 18px;
+            }
+
+            input[type="text"],
+            select {
+                border: 2px solid #ffd700;
+                border-radius: 6px;
+                padding: 7px;
+                width: 270px;
+            }
+
+            input[type="radio"],
+            input[type="checkbox"] {
+                accent-color: #ffd700;
+            }
+
+            .buttons {
+                padding-top: 20px;
+                text-align: right;
+            }
+
+            button {
+                background-color: #ffd700;
+                border: 2px solid #ffffff;
+                border-radius: 8px;
+                color: #000000;
+                font-weight: bold;
+                margin-left: 8px;
+                padding: 10px 18px;
+            }
+
+            .output {
+                border-top: 2px solid #ffd700;
+                margin-top: 20px;
+                padding-top: 10px;
+            }
+
+            .output div {
+                padding: 4px;
+            }
+        </style>
+
+        <script>
+            function showOrder() {
+                var f = document.getElementById("fn").value;
+                var l = document.getElementById("ln").value;
+                var a = document.getElementById("ad").value;
+                var c = document.getElementById("ct").value;
+                var p = document.getElementById("pc").value;
+
+                document.getElementById("name-output").innerHTML = "Name: " + f + " " + l;
+                document.getElementById("address-output").innerHTML = "Address: " + a;
+                document.getElementById("city-output").innerHTML = "City: " + c;
+                document.getElementById("postal-output").innerHTML = "Postal Code: " + p;
+            }
+
+            function clearOrder() {
+                document.getElementById("fn").value = "";
+                document.getElementById("ln").value = "";
+                document.getElementById("ad").value = "";
+                document.getElementById("ct").value = "";
+                document.getElementById("pc").value = "";
+                document.getElementById("name-output").innerHTML = "";
+                document.getElementById("address-output").innerHTML = "";
+                document.getElementById("city-output").innerHTML = "";
+                document.getElementById("postal-output").innerHTML = "";
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <img class="logo" src="images/lo-ellen-robotics-logo.png" alt="Lo-Ellen Robotics logo" />
+        </div>
+
+        <div class="links">
+            <a href="index.html">Alert Version</a>
+            <a href="display.html">Page Output Version</a>
+        </div>
+
+        <div class="form">
+            <h1>Team Shirt Order Form</h1>
+            <p class="team-name">Enter your information and confirm your order.</p>
+
+            <form>
+                <table>
+                    <tr>
+                        <td>First Name:</td>
+                        <td><input type="text" id="fn" placeholder="Enter your first name" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Last Name:</td>
+                        <td><input type="text" id="ln" placeholder="Enter your last name" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Address:</td>
+                        <td><input type="text" id="ad" placeholder="Enter your address" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>City:</td>
+                        <td><input type="text" id="ct" placeholder="Enter your city" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Province:</td>
+                        <td>
+                            <select id="province">
+                                <option value="">Choose your province or territory</option>
+                                <option>Alberta</option>
+                                <option>British Columbia</option>
+                                <option>Manitoba</option>
+                                <option>New Brunswick</option>
+                                <option>Newfoundland and Labrador</option>
+                                <option>Northwest Territories</option>
+                                <option>Nova Scotia</option>
+                                <option>Nunavut</option>
+                                <option>Ontario</option>
+                                <option>Prince Edward Island</option>
+                                <option>Quebec</option>
+                                <option>Saskatchewan</option>
+                                <option>Yukon</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Postal Code:</td>
+                        <td><input type="text" id="pc" placeholder="Enter your postal code" /></td>
+                    </tr>
+
+                    <tr>
+                        <td class="question" colspan="2">What shirt size would you like?</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="radio" name="size" id="small" value="Small" /> <label for="small">Small</label>
+                            <input type="radio" name="size" id="medium" value="Medium" /> <label for="medium">Medium</label>
+                            <input type="radio" name="size" id="large" value="Large" /> <label for="large">Large</label>
+                            <input type="radio" name="size" id="xl" value="XL" /> <label for="xl">XL</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="question" colspan="2">What options would you like?</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" id="back" /> <label for="back">Name on back</label>
+                            <input type="checkbox" id="number" /> <label for="number">Team number</label>
+                            <input type="checkbox" id="flag" /> <label for="flag">Canada flag</label>
+                            <input type="checkbox" id="robot" /> <label for="robot">Robot graphic</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="buttons" colspan="2">
+                            <button type="button" onclick="clearOrder()">Clear Order</button>
+                            <button type="button" onclick="showOrder()">Confirm Order</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <div class="output">
+                <div id="name-output"></div>
+                <div id="address-output"></div>
+                <div id="city-output"></div>
+                <div id="postal-output"></div>
+            </div>
+        </div>
+    </body>
+</html>

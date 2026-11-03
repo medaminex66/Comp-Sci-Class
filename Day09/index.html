@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Javascript Day 09</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 40px;
+            }
+
+            input,
+            button {
+                padding: 6px;
+                margin: 3px;
+            }
+        </style>
+
+        <script>
+            function col() {
+                var c = document.getElementById("col").value;
+
+                if (c == "1") {
+                    document.body.style.backgroundColor = "red";
+                    document.body.style.color = "white";
+                } else if (c == "2") {
+                    document.body.style.backgroundColor = "orange";
+                    document.body.style.color = "black";
+                } else if (c == "3") {
+                    document.body.style.backgroundColor = "yellow";
+                    document.body.style.color = "black";
+                } else if (c == "4") {
+                    document.body.style.backgroundColor = "green";
+                    document.body.style.color = "white";
+                } else if (c == "5") {
+                    document.body.style.backgroundColor = "blue";
+                    document.body.style.color = "white";
+                } else if (c == "6") {
+                    document.body.style.backgroundColor = "purple";
+                    document.body.style.color = "white";
+                } else if (c == "7") {
+                    document.body.style.backgroundColor = "pink";
+                    document.body.style.color = "black";
+                } else if (c == "8") {
+                    document.body.style.backgroundColor = "cyan";
+                    document.body.style.color = "black";
+                } else if (c == "9") {
+                    document.body.style.backgroundColor = "brown";
+                    document.body.style.color = "white";
+                } else if (c == "10") {
+                    document.body.style.backgroundColor = "black";
+                    document.body.style.color = "white";
+                } else {
+                    window.alert("Please choose a number between 1 and 10.");
+                    document.body.style.backgroundColor = "white";
+                    document.body.style.color = "black";
+                }
+            }
+
+            function box() {
+                document.getElementById("col").style.backgroundColor = "lightblue";
+            }
+
+            function buttons() {
+                document.getElementById("colourButton").style.backgroundColor = "yellow";
+                document.getElementById("boxButton").style.backgroundColor = "yellow";
+                document.getElementById("buttonButton").style.backgroundColor = "yellow";
+                document.getElementById("textButton").style.backgroundColor = "yellow";
+            }
+
+            function textSize() {
+                if (document.getElementById("instructions").style.fontSize == "24px") {
+                    document.getElementById("instructions").style.fontSize = "16px";
+                    document.getElementById("textButton").innerHTML = "Make Instructions Bigger";
+                } else {
+                    document.getElementById("instructions").style.fontSize = "24px";
+                    document.getElementById("textButton").innerHTML = "Make Instructions Smaller";
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Amine's Colour Page</h1>
+
+        <p id="instructions">Type a number from 1 to 10 into the box and press the button.</p>
+
+        <p>
+            1 = Red, 2 = Orange, 3 = Yellow, 4 = Green, 5 = Blue,<br />
+            6 = Purple, 7 = Pink, 8 = Cyan, 9 = Brown, 10 = Black
+        </p>
+
+        <p>
+            <input type="text" id="col" size="10" />
+            <button id="colourButton" type="button" onclick="col()">Change Colour</button>
+        </p>
+
+        <p>
+            <button id="boxButton" type="button" onclick="box()">Change Input Box</button>
+            <button id="buttonButton" type="button" onclick="buttons()">Change Button Colours</button>
+             <button id="textButton" type="button" onclick="textSize()">Make Instructions Bigger</button>
+            
+        </p>
+    </body>
+</html>

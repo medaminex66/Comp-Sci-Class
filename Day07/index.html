@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript Day 01</title>
+
+        <style>
+            body {
+                background-color: #111111;
+                color: #ffffff;
+                font-family: Arial, sans-serif;
+               
+            }
+
+            h1 {
+                color: #ffd700;
+                text-align: center;
+            }
+
+            h2 {
+                padding-bottom: 8px;
+            }
+
+            .result {
+                border-radius: 6px;
+                margin-bottom: 12px;
+                padding: 14px;
+            }
+        </style>
+
+        <script>
+            var numberOne = 10;
+            var numberTwo = 6;
+         
+        </script>
+    </head>
+
+    <body>
+        <h2>Amine's JavaScript Math Results</h2>
+
+        <div class="result" id="addition-output"></div>
+        <div class="result" id="subtraction-output"></div>
+        <div class="result" id="multiplication-output"></div>
+        <div class="result" id="division-output"></div>
+        <div class="result" id="power-output"></div>
+        <div class="result" id="pythagorean-output"></div>
+
+        <script>
+
+            function addy() {
+                var additionAnswer = numberOne + numberTwo;
+
+                document.getElementById("addition-output").innerHTML =
+                    "The addition of " + numberOne + " and " + numberTwo +
+                    " equals " + additionAnswer + ".";
+            }
+
+            function subby() {
+                var subtractionAnswer = numberOne - numberTwo;
+
+                document.getElementById("subtraction-output").innerHTML =
+                    "The subtraction of " + numberTwo + " from " + numberOne +
+                    " equals " + subtractionAnswer + ".";
+            }
+
+            function mutly() {
+                var multiplicationAnswer = numberOne * numberTwo;
+
+                document.getElementById("multiplication-output").innerHTML =
+                    "The multiplication of " + numberOne + " and " + numberTwo +
+                    " equals " + multiplicationAnswer + ".";
+            }
+
+            function divvy() {
+                var divisionAnswer = numberOne / numberTwo;
+
+                document.getElementById("division-output").innerHTML =
+                    "The division of " + numberOne + " by " + numberTwo +
+                    " equals " + divisionAnswer + ".";
+            }
+
+            function powy() {
+                var powerAnswer = Math.pow(numberOne, numberTwo);
+
+                document.getElementById("power-output").innerHTML =
+                    numberOne + " to the power of " + numberTwo +
+                    " equals " + powerAnswer + ".";
+            }
+
+            function pytho() {
+                var hypotenuse = Math.sqrt((numberOne * numberTwo) + (numberOne * numberTwo));
+
+                document.getElementById("pythagorean-output").innerHTML =
+                    "For a right triangle with sides " + numberOne + " and " + numberTwo +
+                    ", the hypotenuse equals " + hypotenuse + ".";
+            }
+
+            addy();
+            subby();
+            mutly();
+            divvy();
+            powy();
+            pytho();
+        </script>
+    </body>
+</html>
